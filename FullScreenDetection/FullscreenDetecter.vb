@@ -27,8 +27,8 @@ Public Class FullscreenDetecter
     Private Shared Function GetShellWindow() As IntPtr
 
     End Function
-    <DllImport("user32.dll", SetLastError:=True)>
-    Private Shared Function GetWindowRect(ByVal hwnd As IntPtr, <Out> ByRef rc As Rect) As Integer
+    <DllImport("user32.dll")>
+    Private Shared Function GetWindowRect(ByVal hwnd As IntPtr, <Out> ByRef rc As RECT) As Integer
 
     End Function
     <DllImport("user32.dll")>
@@ -42,12 +42,12 @@ Public Class FullscreenDetecter
 
     Private runningFullScreen As Boolean = False
     Private windowText As New System.Text.StringBuilder(256)
-    Private appBounds As RECT
-    Private screenBounds As Rectangle
-    Private hWnd As IntPtr
+    Private appBounds As New RECT
+    Private screenBounds As New Rectangle
+    Private hWnd As New IntPtr
 
-    Private desktopHandle As IntPtr
-    Private shellHandle As IntPtr
+    Private desktopHandle As New IntPtr
+    Private shellHandle As New IntPtr
 
     Public Function DetectFullscreenApplication() ' this is a base function which can be used to pull ANY fullscreen window, including web browsers.
         hWnd = GetForegroundWindow() ' assumed to be the fullscreen program, is actually just the current window in focus
@@ -78,6 +78,7 @@ Public Class FullscreenDetecter
 
         End Try
         ReturnList.Add(processId)
+        runningFullScreen = False ' prevents requirement for reinit
         Return ReturnList
     End Function
 
