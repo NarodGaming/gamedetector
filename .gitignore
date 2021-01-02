@@ -1,2 +1,20 @@
-
+# Ignore Nuget package/configuration files
 FullScreenDetection/nuget.config
+FullScreenDetection/obj/FullScreenDetection.vbproj.nuget.g.targets
+FullScreenDetection/obj/FullScreenDetection.vbproj.nuget.g.props
+FullScreenDetection/obj/FullScreenDetection.vbproj.nuget.dgspec.json
+FullScreenDetection/obj/Debug/net472/FullScreenDetection.vbproj.FileListAbsolute.txt
+*.nupkg
+*.nuspec
+*.cache
+
+# Ignore build cache Files
+FullScreenDetection/obj/project.assets.json
+
+# Ignore cached txt files, which contain absolute directories
+FullScreenDetection/obj/Debug/v4.7.2/FullScreenDetection.vbproj.FileListAbsolute.txt
+
+
+
+
+

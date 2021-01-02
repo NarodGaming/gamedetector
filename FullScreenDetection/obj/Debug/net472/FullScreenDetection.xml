@@ -1,0 +1,46 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+FullScreenDetection
+</name>
+</assembly>
+<members>
+<member name="T:FullScreenDetection.My.Resources.Resources">
+<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member>
+<member name="P:FullScreenDetection.My.Resources.Resources.ResourceManager">
+<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member>
+<member name="P:FullScreenDetection.My.Resources.Resources.Culture">
+<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member>
+<member name="M:FullScreenDetection.FullscreenDetecter.DetectFullscreenApplication">
+ <summary>
+ Returns any fullscreen application detected. A fullscreen application is determined as one that fills the entire screen (if multi-monitor, screen user is currently using).
+ 
+ If no application detected, only the Boolean will be present in list.
+ </summary>
+ <returns>
+ List(Of Object) (Boolean: True if application detected - False if not, String: Window text of application if was detected, UInteger: Process ID of application if was detected)
+ </returns>
+</member>
+<member name="M:FullScreenDetection.FullscreenDetecter.DetectGameFullscreen">
+ <summary>
+ Returns any fullscreen application detected, but filters out browsers (more to come in future versions). A fullscreen game is determined as one that fills the entire screen (if multi-monitor, screen user is currently using).
+ 
+ If no application detected, only the Boolean will be present in list.
+ </summary>
+ <returns>
+ List(Of Object) (Boolean: True if application detected - False if not, String: Window text of application if was detected, UInteger: Process ID of application if was detected)
+ </returns>
+</member>
+</members>
+</doc>

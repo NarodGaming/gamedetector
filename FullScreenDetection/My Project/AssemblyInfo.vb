@@ -8,12 +8,12 @@ Imports System.Runtime.InteropServices
 
 ' Review the values of the assembly attributes
 
-<Assembly: AssemblyTitle("Narod's Full Screen Detector")>
-<Assembly: AssemblyDescription("A utility for detecting fullscreen applications / games.")>
-<Assembly: AssemblyCompany("")>
-<Assembly: AssemblyProduct("Narod's Full Screen Detector")>
-<Assembly: AssemblyCopyright("Copyright NarodGaming © 2020-2021")>
-<Assembly: AssemblyTrademark("")>
+' <Assembly: AssemblyTitle("Narod's Full Screen Detector")>
+' <Assembly: AssemblyDescription("A utility for detecting fullscreen applications / games.")>
+' <Assembly: AssemblyCompany("")>
+' <Assembly: AssemblyProduct("Narod's Full Screen Detector")>
+' <Assembly: AssemblyCopyright("Copyright NarodGaming © 2020-2021")>
+' <Assembly: AssemblyTrademark("")>
 
 <Assembly: ComVisible(False)>
 
@@ -31,5 +31,5 @@ Imports System.Runtime.InteropServices
 ' by using the '*' as shown below:
 ' <Assembly: AssemblyVersion("1.0.*")>
 
-<Assembly: AssemblyVersion("1.1.2.0")>
-<Assembly: AssemblyFileVersion("1.1.2.0")>
+' <Assembly: AssemblyVersion("1.1.2.0")>
+' <Assembly: AssemblyFileVersion("1.1.2.0")>
