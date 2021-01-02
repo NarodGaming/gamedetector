@@ -49,7 +49,7 @@ Public Class FullscreenDetecter
     Private desktopHandle As New IntPtr
     Private shellHandle As New IntPtr
 
-    Public Function DetectFullscreenApplication() ' this is a base function which can be used to pull ANY fullscreen window, including web browsers.
+    Public Function DetectFullscreenApplication() As List(Of Object) ' this is a base function which can be used to pull ANY fullscreen window, including web browsers.
         hWnd = GetForegroundWindow() ' assumed to be the fullscreen program, is actually just the current window in focus
         desktopHandle = GetDesktopWindow() ' gets the desktop window, as to check that it isn't the desktop which is in focus
         shellHandle = GetShellWindow() ' gets the shell window, as to check that it isn't the shell which is in focus
@@ -76,7 +76,7 @@ Public Class FullscreenDetecter
         Return ReturnList
     End Function
 
-    Public Function DetectGameFullscreen()
+    Public Function DetectGameFullscreen() As List(Of Object)
         Dim response As New List(Of Object)
         response = DetectFullscreenApplication()
 
