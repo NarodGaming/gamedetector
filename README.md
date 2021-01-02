@@ -4,9 +4,22 @@ A .NET library written in VB.NET to detect full screen applications and games.
 ## Usage
 - Download the latest release from the releases tab.
 - Add a reference of the library in your project. (Project -> Add Reference... -> Browse -> Browse...)
-- Import in to your program (VB.NET: Imports FullScreenDetection)
-- Create instance of Fullscreendetecter (VB.NET: Dim FullscreenDetectClient as New FullscreenDetecter)
+- Import in to your program
+VB.NET: 
+```vb.net
+Imports FullScreenDetection
+```
+- Create instance of Fullscreendetecter
+VB.NET:
+```vb.net
+Dim FullscreenDetectClient as New FullscreenDetecter
+```
 - Call with either the DetectFullscreenApplication function, or DetectGameFullscreen.
+VB.NET:
+```vb.net
+Dim detectionappresponse As List(Of Object) = FullscreenDetectClient.DetectFullscreenApplication()
+Dim detectiongameresponse As List(Of Object) = FullscreenDetectClient.DetectGameFullscreen()
+```
 
 Both functions will return the a list of objects:
 Position 0 is a boolean, which will be True if it successfully detected something, or False if not.
