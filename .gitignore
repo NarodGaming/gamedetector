@@ -16,3 +16,11 @@ FullScreenDetection/obj/Debug/v4.7.2/FullScreenDetection.vbproj.FileListAbsolute
 
 # Ignore custom batch file to update NUPKG
 create-upload-nupkg.bat
+
+# Standard VB.NET gitignore
+FullScreenDetection/bin
+FullScreenDetection/obj
+*.user
+*.suo
+_ReSharper.*
+*.sln.cache
