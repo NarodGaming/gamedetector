@@ -11,6 +11,11 @@
     <FileAlignment>512</FileAlignment>
     <MyType>Windows</MyType>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <Authors>NarodGaming</Authors>
+    <Owner>NarodGaming</Owner>
+    <PackageDescription>A library containing fullscreen application detection functions.</PackageDescription>
+    <RepositoryUrl>https://github.com/NarodGaming/gamedetector</RepositoryUrl>
+    <Version>1.1.2</Version>
     <Deterministic>true</Deterministic>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
