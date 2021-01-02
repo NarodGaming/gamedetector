@@ -1,15 +1,18 @@
 # Narod's Game Detector
 A .NET library written in VB.NET to detect full screen applications and games.
 
+## Summary
+Searches for on-screen fullscreen windows on the currently focussed screen. Will return a List(Of Object).
+
 ## Usage
 Code examples in VB.NET
-- Download the latest release from the releases tab.
-- Add a reference of the library in your project. (Project -> Add Reference... -> Browse -> Browse...)
+- Download the latest release from the releases tab, or find in the NuGet package manager ([Narod.FullscreenDetector](https://www.nuget.org/packages/Narod.FullscreenDetector))
+    - (Only required if downloaded from releases) Add a reference of the library in your project. (Project -> Add Reference... -> Browse -> Browse...)
 - Import in to your program
 ```vb.net
 Imports FullScreenDetection
 ```
-- Create instance of Fullscreendetecter
+- Create instance of FullscreenDetecter
 ```vb.net
 Dim FullscreenDetectClient as New FullscreenDetecter
 ```
