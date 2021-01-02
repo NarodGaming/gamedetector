@@ -66,18 +66,12 @@ Public Class FullscreenDetecter
         End If
         Dim ReturnList As New List(Of Object)
         ReturnList.Add(runningFullScreen)
-        Try
-            ReturnList.Add(windowText.ToString) ' exception catched in case it's blank
-        Catch ex As Exception
-
-        End Try
-        Dim processId As UInteger = Nothing
-        Try
+        If runningFullScreen = True Then
+            ReturnList.Add(windowText.ToString)
+            Dim processId As UInteger
             GetWindowThreadProcessId(hWnd, processId)
-        Catch ex As Exception
-
-        End Try
-        ReturnList.Add(processId)
+            ReturnList.Add(processId)
+        End If
         runningFullScreen = False ' prevents requirement for reinit
         Return ReturnList
     End Function
