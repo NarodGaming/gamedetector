@@ -49,6 +49,14 @@ Public Class FullscreenDetecter
     Private desktopHandle As New IntPtr
     Private shellHandle As New IntPtr
 
+    ''' <summary>
+    ''' Returns any fullscreen application detected. A fullscreen application is determined as one that fills the entire screen (if multi-monitor, screen user is currently using).
+    ''' 
+    ''' If no application detected, only the Boolean will be present in list.
+    ''' </summary>
+    ''' <returns>
+    ''' List(Of Object) (Boolean: True if application detected - False if not, String: Window text of application if was detected, UInteger: Process ID of application if was detected)
+    ''' </returns>
     Public Function DetectFullscreenApplication() As List(Of Object) ' this is a base function which can be used to pull ANY fullscreen window, including web browsers.
         hWnd = GetForegroundWindow() ' assumed to be the fullscreen program, is actually just the current window in focus
         desktopHandle = GetDesktopWindow() ' gets the desktop window, as to check that it isn't the desktop which is in focus
@@ -76,6 +84,14 @@ Public Class FullscreenDetecter
         Return ReturnList
     End Function
 
+    ''' <summary>
+    ''' Returns any fullscreen application detected, but filters out browsers (more to come in future versions). A fullscreen game is determined as one that fills the entire screen (if multi-monitor, screen user is currently using).
+    ''' 
+    ''' If no application detected, only the Boolean will be present in list.
+    ''' </summary>
+    ''' <returns>
+    ''' List(Of Object) (Boolean: True if application detected - False if not, String: Window text of application if was detected, UInteger: Process ID of application if was detected)
+    ''' </returns>
     Public Function DetectGameFullscreen() As List(Of Object)
         Dim response As New List(Of Object)
         response = DetectFullscreenApplication()

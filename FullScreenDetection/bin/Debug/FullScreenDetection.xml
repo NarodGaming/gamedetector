@@ -22,5 +22,25 @@ FullScreenDetection
   resource lookups using this strongly typed resource class.
 </summary>
 </member>
+<member name="M:FullScreenDetection.FullscreenDetecter.DetectFullscreenApplication">
+ <summary>
+ Returns any fullscreen application detected. A fullscreen application is determined as one that fills the entire screen (if multi-monitor, screen user is currently using).
+ 
+ If no application detected, only the Boolean will be present in list.
+ </summary>
+ <returns>
+ List(Of Object) (Boolean: True if application detected - False if not, String: Window text of application if was detected, UInteger: Process ID of application if was detected)
+ </returns>
+</member>
+<member name="M:FullScreenDetection.FullscreenDetecter.DetectGameFullscreen">
+ <summary>
+ Returns any fullscreen application detected, but filters out browsers (more to come in future versions). A fullscreen game is determined as one that fills the entire screen (if multi-monitor, screen user is currently using).
+ 
+ If no application detected, only the Boolean will be present in list.
+ </summary>
+ <returns>
+ List(Of Object) (Boolean: True if application detected - False if not, String: Window text of application if was detected, UInteger: Process ID of application if was detected)
+ </returns>
+</member>
 </members>
 </doc>
