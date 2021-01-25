@@ -30,6 +30,9 @@ Both functions will return the a list of objects:
 DetectFullscreenApplication will return any full screen application.
 DetectGameFullscreen will filter out select programs that checks are in place for (e.g. web browsers).
 
+## Further Help
+Please see my video here: https://www.youtube.com/watch?v=BfuTOI5MK0A
+
 ## Helping
 If you find any bugs, please report it as an issue.
 
