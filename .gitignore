@@ -14,9 +14,6 @@ FullScreenDetection/obj/project.assets.json
 # Ignore cached txt files, which contain absolute directories
 FullScreenDetection/obj/Debug/v4.7.2/FullScreenDetection.vbproj.FileListAbsolute.txt
 
-# Ignore custom batch file to update NUPKG
-create-upload-nupkg.bat
-
 # Standard VB.NET gitignore
 FullScreenDetection/bin
 FullScreenDetection/obj
@@ -25,3 +22,6 @@ FullScreenDetection/obj
 *.suo
 _ReSharper.*
 *.sln.cache
+
+# Upload bat file ignore
+*.bat

@@ -20,6 +20,7 @@ Dim FullscreenDetectClient as New FullscreenDetecter
 ```vb.net
 Dim detectionappresponse As List(Of Object) = FullscreenDetectClient.DetectFullscreenApplication()
 Dim detectiongameresponse As List(Of Object) = FullscreenDetectClient.DetectGameFullscreen()
+Dim customappresponse As List(Of Object) = FullscreenDetectClient.DetectCustomFullscreen("(partial/complete)-window-title-of-application-here")
 ```
 
 Both functions will return the a list of objects:

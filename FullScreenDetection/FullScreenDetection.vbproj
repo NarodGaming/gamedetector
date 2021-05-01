@@ -18,7 +18,7 @@
   <PropertyGroup>
       <PackageId>Narod.FullscreenDetector</PackageId>
       <Title>Narod's Fullscreen Detector</Title>
-      <Version>1.1.3</Version>
+      <Version>1.2.0</Version>
       <Authors>NarodGaming</Authors>
       <Owner>NarodGaming</Owner>
       <PackageDescription>A library containing fullscreen application detection functions.</PackageDescription>
