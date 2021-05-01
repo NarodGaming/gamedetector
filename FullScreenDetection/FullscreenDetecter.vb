@@ -115,4 +115,35 @@ Public Class FullscreenDetecter
         End If
     End Function
 
+    ''' <summary>
+    ''' Returns if specified application name (from window title text) is currently in focus and maximised.
+    ''' 
+    ''' If the application was not detected, only the Boolean will be present in list.
+    ''' </summary>
+    ''' <returns>
+    ''' List(Of Object) (Boolean: True if application detected - False if not, String: Window text of application if was detected, UInteger: Process ID of application if was detected)
+    ''' </returns>
+    Public Function DetectCustomFullscreen(appname As String) As List(Of Object)
+        Dim response As New List(Of Object)
+        response = DetectFullscreenApplication()
+
+        If response(0) = True Then
+            ' fullscreen detected
+            Dim applicationame As String = response(1)
+            If applicationame.Contains(appname) Then
+                Dim responselist As New List(Of Object) From {
+                    False
+                }
+                Return responselist
+            End If
+            Return response ' all checks run, is considered a game to be passed forwards
+        Else
+            ' fullscreen not detected, this function will return a list with just 1 response as the false boolean
+            Dim responselist As New List(Of Object) From {
+                False
+            }
+            Return responselist
+        End If
+    End Function
+
 End Class
