@@ -60,28 +60,28 @@ Public Class FullscreenDetecter
     Public Function DetectFullscreenApplication() As List(Of Object) ' this is a base function which can be used to pull ANY fullscreen window, including web browsers.
         hWnd = GetForegroundWindow() ' assumed to be the fullscreen program, is actually just the current window in focus
         desktopHandle = GetDesktopWindow() ' gets the desktop window, as to check that it isn't the desktop which is in focus
-        shellHandle = GetShellWindow() ' gets the shell window, as to check that it isn't the shell which is in focus
+        shellHandle = GetShellWindow() ' gets the shell window, as to check that it isn't the shell (usually explorer.exe) which is in focus
 
-        If Not hWnd = Nothing And Not hWnd.Equals(IntPtr.Zero) Then
-            If Not (hWnd.Equals(desktopHandle) Or hWnd.Equals(shellHandle)) Then
-                GetWindowRect(hWnd, appBounds)
-                screenBounds = Screen.FromHandle(hWnd).Bounds
-                If ((appBounds.Bottom - appBounds.Top) = screenBounds.Height And (appBounds.Right - appBounds.Left) = screenBounds.Width) Then
-                    runningFullScreen = True
-                    GetWindowText(GetForegroundWindow, windowText, windowText.Capacity)
+        If Not hWnd = Nothing And Not hWnd.Equals(IntPtr.Zero) Then ' checks to make sure there actually is a currently focussed window, and that the focussed window is valid (not hidden, etc)
+            If Not (hWnd.Equals(desktopHandle) Or hWnd.Equals(shellHandle)) Then ' checks to see if the application doesn't match the desktop window (would likely happen if no window focussed), and that it doesn't match the shell application (usually explorer.exe)
+                GetWindowRect(hWnd, appBounds) ' gets the window size of the application it is going to check
+                screenBounds = Screen.FromHandle(hWnd).Bounds ' gets the current monitor size (resolution)
+                If ((appBounds.Bottom - appBounds.Top) = screenBounds.Height And (appBounds.Right - appBounds.Left) = screenBounds.Width) Then ' aka if window is fullscreen
+                    runningFullScreen = True ' set boolean to True
+                    GetWindowText(GetForegroundWindow, windowText, windowText.Capacity) ' get window text of application
                 End If
             End If
         End If
-        Dim ReturnList As New List(Of Object)
-        ReturnList.Add(runningFullScreen)
-        If runningFullScreen = True Then
-            ReturnList.Add(windowText.ToString)
-            Dim processId As UInteger
-            GetWindowThreadProcessId(hWnd, processId)
-            ReturnList.Add(processId)
+        Dim ReturnList As New List(Of Object) ' set up list for response
+        ReturnList.Add(runningFullScreen) ' add boolean response
+        If runningFullScreen = True Then ' only run if fullscreen application was detected
+            ReturnList.Add(windowText.ToString) ' add application name to list
+            Dim processId As UInteger ' create variable to store process ID of application in
+            GetWindowThreadProcessId(hWnd, processId) ' get process ID of that specific application/window
+            ReturnList.Add(processId) ' add process ID to list
         End If
         runningFullScreen = False ' prevents requirement for reinit
-        Return ReturnList
+        Return ReturnList ' return response
     End Function
 
     ''' <summary>
@@ -93,10 +93,10 @@ Public Class FullscreenDetecter
     ''' List(Of Object) (Boolean: True if application detected - False if not, String: Window text of application if was detected, UInteger: Process ID of application if was detected)
     ''' </returns>
     Public Function DetectGameFullscreen() As List(Of Object)
-        Dim response As New List(Of Object)
-        response = DetectFullscreenApplication()
+        Dim response As New List(Of Object) ' create response "list" variable
+        response = DetectFullscreenApplication() ' runs main function to check if fullscreen app
 
-        If response(0) = True Then
+        If response(0) = True Then ' checks to see if main function returned true
             ' fullscreen detected
             Dim applicationame As String = response(1)
             If applicationame.Contains("Microsoft Edge") Or applicationame.Contains("Mozilla Firefox") Or applicationame.Contains("Google Chrome") Or applicationame.Contains("Microsoft? Edge") Then ' if it's a webbrowser, it isn't considered a game. The extra "Microsoft? Edge" is there due to a bug that can occur on the current version of Edge.
@@ -124,10 +124,10 @@ Public Class FullscreenDetecter
     ''' List(Of Object) (Boolean: True if application detected - False if not, String: Window text of application if was detected, UInteger: Process ID of application if was detected)
     ''' </returns>
     Public Function DetectCustomFullscreen(appname As String) As List(Of Object)
-        Dim response As New List(Of Object)
-        response = DetectFullscreenApplication()
+        Dim response As New List(Of Object) ' create response "list" variable
+        response = DetectFullscreenApplication() ' runs main function to check if fullscreen app
 
-        If response(0) = True Then
+        If response(0) = True Then ' checks to see if main function returned true
             ' fullscreen detected
             Dim applicationame As String = response(1)
             If applicationame.Contains(appname) Then
