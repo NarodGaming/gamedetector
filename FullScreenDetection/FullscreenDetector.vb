@@ -1,4 +1,4 @@
-﻿' Created by NarodGaming (c) 2020-2021
+﻿' Created by NarodGaming (c) 2020-2022
 ' Please leave this notice at the top of this file, you can add your name as an editor beneath if you would like.
 ' Additional authors/editors: 
 
@@ -18,15 +18,45 @@ Public Class FullscreenDetector
     Private ProgramDetected As String = Nothing
     Private ProcessIDDetected As UInteger = Nothing
 
+    ''' <summary>
+    ''' Returns if a fullscreen application has been detected from the last detection run.
+    ''' </summary>
+    ''' <returns>
+    ''' 0 = no fullscreen application detected. 1 = fullscreen application detected.
+    ''' </returns>
     Public Function GetHasDetected() As Boolean
-        Return HasDetected
+        If HasDetected = Nothing Then ' if hasdetected is still nothing which would be set from init
+            Throw New NullReferenceException("Attempted to check if fullscreen application was detected before the detection method was run.") ' throw exception with verbose message to hopefully help user
+            Return False ' in case of a try/catch to ignore above error, return false instead
+        End If
+        Return HasDetected ' return
     End Function
 
+    ''' <summary>
+    ''' Returns the program name that has been detected from the last detection run.
+    ''' </summary>
+    ''' <returns>
+    ''' The window title of the program that has been detected. Throws NullReferenceException if no fullscreen application detected.
+    ''' </returns>
     Public Function GetProgramDetected() As String
-        Return ProgramDetected
+        If ProgramDetected = Nothing Then ' if programdetected is still nothing which would be set from init
+            Throw New NullReferenceException("Attempted to check name of fullscreen application before the detection method was run, or when no fullscreen application was detected.") ' throw exception with verbose message to hopefully help user
+            Return "" ' in case of a try/catch to ignore above error, return blank string instead
+        End If
+        Return ProgramDetected ' return
     End Function
 
+    ''' <summary>
+    ''' Returns the process ID that has been detected from the last detection run.
+    ''' </summary>
+    ''' <returns>
+    ''' The process ID of the program that has been detected. Throws NullReferenceException if no fullscreen application detected.
+    ''' </returns>
     Public Function GetProcessIDDetected() As UInteger
+        If ProcessIDDetected = Nothing Then ' if processiddetected is still nothing which would be set from init
+            Throw New NullReferenceException("Attempted to check process ID of fullscreen application before the detection method was run, or when no fullscreen application was detected.") ' throw exception with verbose message to hopefully help user
+            Return 0 ' in case of a try/catch to ignore above error, return 0 integer instead
+        End If
         Return ProcessIDDetected
     End Function
 
@@ -65,9 +95,9 @@ Public Class FullscreenDetector
     Private shellHandle As New IntPtr
 
     ''' <summary>
-    ''' Returns any fullscreen application detected. A fullscreen application is determined as one that fills the entire screen (if multi-monitor, screen user is currently using).
+    ''' Checks for any fullscreen application in-use, and stores it in the object.
     ''' 
-    ''' If no application detected, only the Boolean will be present in list.
+    ''' Take a look at the 'Get' functions provided by the object for output.
     ''' </summary>
     Public Sub DetectFullscreenApplication() ' this is a base function which can be used to pull ANY fullscreen window, including web browsers.
         hWnd = GetForegroundWindow() ' assumed to be the fullscreen program, is actually just the current window in focus
