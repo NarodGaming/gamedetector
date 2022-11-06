@@ -26,6 +26,7 @@ Namespace FullscreenDetection
         ''' <returns>
         ''' 0 = no fullscreen application detected. 1 = fullscreen application detected.
         ''' </returns>
+        ''' <exception cref="NullReferenceException">Thrown if trying to get before detection has run/finished.</exception>
         Public Function GetHasDetected() As Boolean
             If HasDetected = Nothing Then ' if hasdetected is still nothing which would be set from init
                 Throw New NullReferenceException("Attempted to check if fullscreen application was detected before the detection method was run.") ' throw exception with verbose message to hopefully help user
@@ -40,6 +41,7 @@ Namespace FullscreenDetection
         ''' <returns>
         ''' The window title of the program that has been detected. Throws NullReferenceException if no fullscreen application detected.
         ''' </returns>
+        ''' <exception cref="NullReferenceException">Thrown if trying to get before detection has run/finished.</exception>
         Public Function GetProgramDetected() As String
             If ProgramDetected = Nothing Then ' if programdetected is still nothing which would be set from init
                 Throw New NullReferenceException("Attempted to check name of fullscreen application before the detection method was run, or when no fullscreen application was detected.") ' throw exception with verbose message to hopefully help user
@@ -54,6 +56,7 @@ Namespace FullscreenDetection
         ''' <returns>
         ''' The process ID of the program that has been detected. Throws NullReferenceException if no fullscreen application detected.
         ''' </returns>
+        ''' <exception cref="NullReferenceException">Thrown if trying to get before detection has run/finished.</exception>
         Public Function GetProcessIDDetected() As UInteger
             If ProcessIDDetected = Nothing Then ' if processiddetected is still nothing which would be set from init
                 Throw New NullReferenceException("Attempted to check process ID of fullscreen application before the detection method was run, or when no fullscreen application was detected.") ' throw exception with verbose message to hopefully help user
