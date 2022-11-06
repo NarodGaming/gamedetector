@@ -18,7 +18,7 @@
   <PropertyGroup>
       <PackageId>Narod.FullscreenDetector</PackageId>
       <Title>Narod's Fullscreen Detector</Title>
-      <Version>2.0.0</Version>
+      <Version>2.0.1</Version>
       <Authors>NarodGaming</Authors>
       <Owner>NarodGaming</Owner>
       <PackageDescription>A library containing fullscreen application detection functions.</PackageDescription>
@@ -56,6 +56,13 @@
   </PropertyGroup>
   <PropertyGroup>
     <OptionInfer>On</OptionInfer>
+    <Copyright>NarodGaming 2022</Copyright>
+    <Description>A .NET library written in VB.NET to detect full screen applications and games.</Description>
+    <PackageProjectUrl>https://github.com/NarodGaming/gamedetector</PackageProjectUrl>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <RepositoryType>git</RepositoryType>
+    <PackageReleaseNotes>- Added exception information to documentation.</PackageReleaseNotes>
+    <PackageTags>game library games detection detector vbnet</PackageTags>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -81,6 +88,10 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="..\README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
