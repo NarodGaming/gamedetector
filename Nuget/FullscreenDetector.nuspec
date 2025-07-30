@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package >
+  <metadata>
+    <id>Narod.FullscreenDetector</id>
+    <version>3.0.0</version>
+    <title>Narod's Fullscreen Detector</title>
+    <authors>NarodGaming</authors>
+    <summary>Provides functions to detect fullscreen applications and games, returning if it was detected, and if so, extra information</summary>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <license type="expression">MIT</license>
+    <!-- <icon>icon.png</icon> -->
+    <projectUrl>https://github.com/NarodGaming/gamedetector</projectUrl>
+    <description>A .NET library written in VB.NET to detect full screen applications and games.</description>
+    <releaseNotes>Switch to C# and .NET 8.0</releaseNotes>
+    <copyright>NarodGaming 2025</copyright>
+    <tags>game library games detection detector csharp</tags>
+  </metadata>
+</package>
