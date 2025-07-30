@@ -1,11 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.14.36301.6 d17.14
+VisualStudioVersion = 17.14.36301.6
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FullscreenDetector", "FullscreenDetector.csproj", "{20E0A981-98E5-4E2C-9014-45EDA7F0F009}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DetectorExample", "..\DetectorExample\DetectorExample.csproj", "{63481D1B-4F3D-48BE-BA2F-F1969E1C4A54}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FullscreenDetectorLegacy", "..\FullscreenDetectorLegacy\FullscreenDetectorLegacy.csproj", "{7C0F11EA-FA74-4173-87C8-01BE26064ECB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{63481D1B-4F3D-48BE-BA2F-F1969E1C4A54}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{63481D1B-4F3D-48BE-BA2F-F1969E1C4A54}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{63481D1B-4F3D-48BE-BA2F-F1969E1C4A54}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7C0F11EA-FA74-4173-87C8-01BE26064ECB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7C0F11EA-FA74-4173-87C8-01BE26064ECB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7C0F11EA-FA74-4173-87C8-01BE26064ECB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7C0F11EA-FA74-4173-87C8-01BE26064ECB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
