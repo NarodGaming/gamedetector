@@ -40,7 +40,7 @@
             {
                 if (shouldRescan == true)
                 {
-                    detectFullScreenApplication();
+                    detectFullscreenApplication();
                 } else if (fullscreenDetected == null)
                 {
                     throw new InvalidOperationException("Fullscreen detection has not been performed yet. Either run a detection first, or allow rescans: isFullscreenDetected(true).");
@@ -58,7 +58,7 @@
             {
                 if (shouldRescan == true)
                 {
-                    detectFullScreenApplication();
+                    detectFullscreenApplication();
                 } else if (programDetected == null && fullscreenDetected == false)
                 {
                     throw new InvalidOperationException("Full screen detection has been performed, but no full screen application was detected. Either check correctly if one has been detected, or use getProgramDetails()");
@@ -79,7 +79,7 @@
             {
                 if (shouldRescan == true)
                 {
-                    detectFullScreenApplication();
+                    detectFullscreenApplication();
                 } else if (processID == null && fullscreenDetected == false)
                 {
                     throw new InvalidOperationException("Full screen detection has been performed, but no full screen application was detected. Either check correctly if one has been detected, or use getProgramDetails()");
@@ -100,7 +100,7 @@
             {
                 if (shouldRescan == true)
                 {
-                    detectFullScreenApplication();
+                    detectFullscreenApplication();
                 } else if (fullscreenDetected == null)
                 {
                     throw new InvalidOperationException("Fullscreen detection has not been performed yet. Either run a detection first, or allow rescans: getProgramDetails(true).");
@@ -143,7 +143,7 @@
             /// <summary>
             /// Checks for any fullscreen application currently running in the foreground.
             /// </summary>
-            public void detectFullScreenApplication()
+            public void detectFullscreenApplication()
             {
                 hWnd = GetForegroundWindow();
                 desktopHandle = GetDesktopWindow();
